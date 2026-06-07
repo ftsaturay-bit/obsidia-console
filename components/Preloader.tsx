@@ -25,7 +25,7 @@ export default function Preloader() {
           initial={{ y: 0 }}
           exit={{ y: "-100vh" }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0C1213]"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0A0908]"
         >
           <div className="flex overflow-hidden font-sans text-3xl md:text-5xl font-medium tracking-tight text-white">
             {characters.map((char, index) => (

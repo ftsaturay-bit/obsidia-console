@@ -27,7 +27,7 @@ export default function Navbar() {
           y: isScrolled ? 16 : 0,
           width: "100%",
           maxWidth: isScrolled ? "64rem" : "100%", // 64rem = max-w-5xl when scrolled
-          backgroundColor: isScrolled ? "rgba(17, 26, 27, 0.75)" : "rgba(0, 0, 0, 0)",
+          backgroundColor: isScrolled ? "rgba(10, 9, 8, 0.85)" : "rgba(0, 0, 0, 0)",
           backdropFilter: isScrolled ? "blur(14px)" : "blur(0px)",
           borderColor: isScrolled ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0)",
           borderWidth: isScrolled ? "1px" : "0px",
@@ -61,7 +61,7 @@ export default function Navbar() {
               Sign in
             </Link>
             <button className="bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-zinc-200/20 font-semibold tracking-wide">
-              Start your project
+              Launch Console
             </button>
           </div>
         </div>
