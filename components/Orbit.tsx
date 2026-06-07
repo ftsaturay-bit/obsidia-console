@@ -2,9 +2,13 @@
 
 import { useEffect, useRef, ReactNode } from 'react';
 
+interface OrbitItemData {
+  src: string;
+  name: string;
+}
+
 interface OrbitProps {
-  images: string[];
-  altPrefix?: string;
+  items: OrbitItemData[];
   // Single orbital radius — vertical axis is compressed by 0.45 for perspective tilt
   radius?: number;
   // Seconds for one complete revolution
@@ -15,8 +19,7 @@ interface OrbitProps {
 }
 
 export default function Orbit({
-  images = [],
-  altPrefix = 'Orbiting logo',
+  items = [],
   radius = 220,
   duration = 30,
   itemSize = 56,
@@ -30,8 +33,11 @@ export default function Orbit({
   const lastTimeRef = useRef<number | null>(null);
   const frameRef = useRef<number | null>(null);
 
+  // Use a ref to pause the loop immediately without waiting for a React re-render
+  const isHoveredRef = useRef(false);
+
   useEffect(() => {
-    const count = images.length;
+    const count = items.length;
     if (count === 0) return;
 
     // Angular velocity: one full rotation per `duration` seconds
@@ -42,8 +48,10 @@ export default function Orbit({
       const delta = (timestamp - lastTimeRef.current) / 1000;
       lastTimeRef.current = timestamp;
 
-      // Advance the global orbit angle by elapsed time
-      angleRef.current += angularSpeed * delta;
+      // Only advance the orbit angle if we are not hovering over any logo
+      if (!isHoveredRef.current) {
+        angleRef.current += angularSpeed * delta;
+      }
 
       for (let i = 0; i < count; i++) {
         const el = itemRefs.current[i];
@@ -62,14 +70,17 @@ export default function Orbit({
         const tLinear = (sinAngle + 1) / 2;
         const t = tLinear * tLinear * (3 - 2 * tLinear);
 
-        // No scale variation — all logos stay the same size
-        // Only opacity and z-index convey depth
+        // No scale variation — all logos stay the same base size.
+        // Hover enlargement is handled purely by CSS on the inner wrapper.
         const opacity = 0.35 + t * 0.65;          // 0.35 (back) → 1.00 (front)
-        const zIndex  = Math.round(10 + t * 20);  // 10  (back) → 30  (front)
+
+        // When hovered, the CSS `z-index` takes over via Tailwind classes.
+        // We set the baseline `z-index` here so it correctly layers during orbit.
+        const zIndex = Math.round(10 + t * 20);  // 10  (back) → 30  (front)
 
         el.style.transform = `translate3d(calc(-50% + ${x.toFixed(2)}px), calc(-50% + ${y.toFixed(2)}px), 0)`;
-        el.style.zIndex    = String(zIndex);
-        el.style.opacity   = opacity.toFixed(4);
+        el.style.zIndex = String(zIndex);
+        el.style.opacity = opacity.toFixed(4);
       }
 
       frameRef.current = requestAnimationFrame(loop);
@@ -80,7 +91,7 @@ export default function Orbit({
       if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
       lastTimeRef.current = null;
     };
-  }, [images.length, radius, duration]);
+  }, [items.length, radius, duration]);
 
   return (
     <div
@@ -94,26 +105,38 @@ export default function Orbit({
         </div>
       )}
 
-      {images.map((src, i) => (
+      {items.map((item, i) => (
         <div
-          key={src}
+          key={item.name}
           ref={(el) => { itemRefs.current[i] = el; }}
-          className="absolute"
+          className="absolute group hover:!z-[50] hover:!opacity-100 cursor-pointer"
+          onMouseEnter={() => { isHoveredRef.current = true; }}
+          onMouseLeave={() => { isHoveredRef.current = false; }}
           style={{
             // Initial position: stacked at center until first rAF tick
             top: '50%',
             left: '50%',
             width: itemSize,
             height: itemSize,
-            willChange: 'transform, opacity',
+            willChange: 'transform, opacity, z-index',
           }}
         >
-          <img
-            src={src}
-            alt={`${altPrefix} ${i + 1}`}
-            draggable={false}
-            className="w-full h-full object-contain select-none"
-          />
+          {/* Tooltip Popup */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none px-2.5 py-1 bg-zinc-800 text-white text-[11px] font-medium rounded-md shadow-xl whitespace-nowrap z-50">
+            {item.name}
+            {/* Tooltip triangle indicator */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[4px] border-transparent border-t-zinc-800" />
+          </div>
+
+          {/* Logo container handles the hover scale so the rAF transform isn't interrupted */}
+          <div className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-120">
+            <img
+              src={item.src}
+              alt={item.name}
+              draggable={false}
+              className="w-full h-full object-contain select-none"
+            />
+          </div>
         </div>
       ))}
     </div>

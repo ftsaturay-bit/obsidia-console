@@ -90,55 +90,47 @@ export default function Page() {
 
           {/* Left Content Column */}
           <div className="lg:col-span-6 flex flex-col text-left">
-            {/* Section label — small, sharp, widely spaced */}
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-zinc-500 uppercase mb-8 block">
-              BUILT FOR MODERN WEB ARCHITECTURE
+            {/* Minimal Eyebrow Label */}
+            <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
+              Built for Modern Stack
             </span>
 
-            {/* Body copy — large, relaxed, with inline tech highlights */}
-            <p className="text-xl md:text-2xl font-normal text-zinc-400 tracking-tight leading-[1.4] max-w-xl">
+            {/* Striking Headline */}
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium tracking-tight text-white mb-6 leading-[1.15]">
+              Plugs seamlessly into your architecture.
+            </h2>
+
+            {/* Editorial Body Copy with Glassmorphism Badges */}
+            <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg">
               If your app runs on{" "}
-              <span className="text-zinc-100 font-medium">Next.js</span>
+              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Next.js</span>
               , hosts on{" "}
-              <span className="text-zinc-100 font-medium">Vercel</span>
+              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Vercel</span>
               , uses{" "}
-              <span className="text-zinc-100 font-medium">Supabase</span>
+              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Supabase</span>
               {" "}or{" "}
-              <span className="text-zinc-100 font-medium">Neon</span>
+              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Neon</span>
               {" "}for data, and syncs via{" "}
-              <span className="text-zinc-100 font-medium">Upstash</span>
+              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Upstash</span>
               , you can drop Obsidia right on top to shield your APIs and track your metrics instantly.
             </p>
 
-            {/* CTA — sliding text reveal, matches hero button weight */}
-            <div className="mt-10 md:mt-12">
-              <button className="relative overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg shadow-zinc-200/20 group">
-                <span className="relative block overflow-hidden">
-                  <span className="block transition-all duration-300 transform ease-out group-hover:-translate-y-full group-hover:opacity-0">
-                    Get started
-                  </span>
-                  <span className="absolute inset-0 block transition-all duration-300 transform ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                    Get started
-                  </span>
-                </span>
-              </button>
-            </div>
+
           </div>
 
           {/* Right Orbit Column */}
           <div className="lg:col-span-6 flex items-center justify-center h-[420px] md:h-[500px]">
             <Orbit
-              images={[
-                "https://cdn.simpleicons.org/nextdotjs/ffffff",
-                "https://cdn.simpleicons.org/typescript/ffffff",
-                "https://cdn.simpleicons.org/supabase/ffffff",
-                "https://cdn.simpleicons.org/neon/ffffff",
-                "https://cdn.simpleicons.org/upstash/ffffff",
-                "https://cdn.simpleicons.org/resend/ffffff",
-                "https://cdn.simpleicons.org/vercel/ffffff",
-                "https://cdn.simpleicons.org/docker/ffffff",
+              items={[
+                { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
+                { src: "https://cdn.simpleicons.org/typescript/ffffff", name: "TypeScript" },
+                { src: "https://cdn.simpleicons.org/supabase/ffffff", name: "Supabase" },
+                { src: "https://cdn.simpleicons.org/neon/ffffff", name: "Neon" },
+                { src: "https://cdn.simpleicons.org/upstash/ffffff", name: "Upstash" },
+                { src: "https://cdn.simpleicons.org/resend/ffffff", name: "Resend" },
+                { src: "https://cdn.simpleicons.org/vercel/ffffff", name: "Vercel" },
+                { src: "https://cdn.simpleicons.org/docker/ffffff", name: "Docker" },
               ]}
-              altPrefix="Tech logo"
               radius={170}
               duration={28}
               itemSize={52}
