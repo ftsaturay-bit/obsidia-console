@@ -19,33 +19,32 @@ export default function Navbar() {
   });
 
   return (
-    // Fixed wrapper to anchor the nav safely while allowing pointer events to pass through empty space
-    <div className="fixed top-0 left-0 right-0 z-40 flex justify-center w-full pointer-events-none px-4">
+    // Fixed wrapper — no horizontal padding here; the inner container handles gutters
+    <div className="fixed top-0 left-0 right-0 z-40 flex justify-center w-full pointer-events-none pt-2">
       <motion.nav
         initial={false}
         animate={{
-          // y: 16 equates to top-4 (1rem)
           y: isScrolled ? 16 : 0,
           width: "100%",
-          maxWidth: isScrolled ? "56rem" : "100%", // 56rem is Tailwind's max-w-4xl
-          backgroundColor: isScrolled ? "rgba(17, 26, 27, 0.7)" : "rgba(0, 0, 0, 0)",
-          backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
-          borderColor: isScrolled ? "rgba(182, 139, 122, 0.3)" : "rgba(0, 0, 0, 0)",
+          maxWidth: isScrolled ? "64rem" : "100%", // 64rem = max-w-5xl when scrolled
+          backgroundColor: isScrolled ? "rgba(17, 26, 27, 0.75)" : "rgba(0, 0, 0, 0)",
+          backdropFilter: isScrolled ? "blur(14px)" : "blur(0px)",
+          borderColor: isScrolled ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0)",
           borderWidth: isScrolled ? "1px" : "0px",
           borderStyle: "solid",
           borderRadius: isScrolled ? "9999px" : "0px",
-          boxShadow: isScrolled 
-            ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" // shadow-xl
+          boxShadow: isScrolled
+            ? "0 20px 40px -8px rgba(0, 0, 0, 0.4)"
             : "none",
         }}
-        // Use an elegant organic transition matching the Dreelio morph feel
-        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} 
-        className="h-16 pointer-events-auto"
+        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+        className="h-20 pointer-events-auto overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between px-6 md:px-8">
+        {/* Inner container: constrains content to max-w-7xl on full-width, fills pill when scrolled */}
+        <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between px-8 md:px-12">
           {/* Left: Logo + Brand Name */}
           <div className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
+            <Image src="/logo1.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
             <span className="font-semibold text-white tracking-tight text-lg">obsidia</span>
           </div>
 
