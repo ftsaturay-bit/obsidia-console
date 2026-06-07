@@ -7,14 +7,14 @@ export default function Page() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* Beams Background */}
         <div className="absolute inset-0 z-0">
           <Beams
             beamWidth={2}
-            beamHeight={15}
-            beamNumber={12}
-            lightColor="#0c151a"
+            beamHeight={20}
+            beamNumber={10}
+            lightColor="#d6c7a3"
             speed={2}
             noiseIntensity={1.75}
             scale={0.2}
@@ -23,13 +23,22 @@ export default function Page() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-8">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-            Landing/Marketing Page
+        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto pt-40 pb-24 px-6">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-zinc-100 to-zinc-400 leading-[1.15]">
+            Infrastructure tracking. Engineered for precision.
           </h1>
-          <p className="mt-4 text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
-            Scroll down to see the Navbar transition.
+          <p className="text-zinc-400 text-sm md:text-base max-w-xl mt-6 leading-relaxed">
+            A developer-first control plane for high-throughput system audit logging, metrics tracking, and secure API shielding.
           </p>
+
+          <div className="flex items-center gap-4 mt-10">
+            <button className="bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-zinc-200/20">
+              Start your project
+            </button>
+            <button className="px-6 py-3 rounded-full border border-zinc-700 hover:bg-zinc-800 transition-colors text-white font-medium">
+              Read the Docs
+            </button>
+          </div>
         </div>
       </section>
     </main>

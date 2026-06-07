@@ -256,7 +256,7 @@ const Beams: FC<BeamsProps> = ({
       </group>
       <ambientLight intensity={1} />
       <color attach="background" args={['#000000']} />
-      <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
+      <PerspectiveCamera makeDefault position={[0, 0, 40]} fov={15} />
     </CanvasWrapper>
   );
 };
@@ -370,3 +370,5 @@ const DirLight: FC<{ position: [number, number, number]; color: string }> = ({ p
   }, []);
   return <directionalLight ref={dir} color={color} intensity={1} position={position} />;
 };
+
+export default Beams;

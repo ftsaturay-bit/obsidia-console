@@ -40,29 +40,31 @@ export default function Navbar() {
         }}
         // Use an elegant organic transition matching the Dreelio morph feel
         transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} 
-        className="flex items-center justify-between px-6 md:px-8 h-16 pointer-events-auto"
+        className="h-16 pointer-events-auto"
       >
-        {/* Left: Logo + Brand Name */}
-        <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
-          <span className="font-semibold text-white tracking-tight text-lg">obsidia</span>
-        </div>
+        <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between px-6 md:px-8">
+          {/* Left: Logo + Brand Name */}
+          <div className="flex items-center gap-2">
+            <Image src="/logo.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
+            <span className="font-semibold text-white tracking-tight text-lg">obsidia</span>
+          </div>
 
-        {/* Center: Horizontal Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
-          <Link href="#services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-          <Link href="#docs" className="hover:text-white transition-colors">Docs</Link>
-        </div>
+          {/* Center: Horizontal Navigation Links */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+            <Link href="#services" className="hover:text-white transition-colors">Services</Link>
+            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="#docs" className="hover:text-white transition-colors">Docs</Link>
+          </div>
 
-        {/* Right: Actions */}
-        <div className="flex items-center gap-4 text-sm font-medium">
-          <Link href="/signin" className="hidden sm:block text-zinc-400 hover:text-white transition-colors">
-            Sign in
-          </Link>
-          <button className="bg-gradient-to-b from-[#C69A89] to-[#A66E5B] text-zinc-950 px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-[#C69A89]/20 font-semibold tracking-wide">
-            Start your project
-          </button>
+          {/* Right: Actions */}
+          <div className="flex items-center gap-4 text-sm font-medium">
+            <Link href="/signin" className="hidden sm:block text-zinc-400 hover:text-white transition-colors">
+              Sign in
+            </Link>
+            <button className="bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-zinc-200/20 font-semibold tracking-wide">
+              Start your project
+            </button>
+          </div>
         </div>
       </motion.nav>
     </div>
