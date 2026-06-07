@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Beams from "@/components/Beams";
 import SplitText from "@/components/SplitText";
+import BlurText from "@/components/BlurText";
 
 export default function Page() {
   return (
@@ -27,6 +28,7 @@ export default function Page() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto pt-40 pb-24 px-6">
+          {/* Sequence typography animations to follow ambient background load */}
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.15] flex flex-col items-center gap-1 md:gap-2">
             <SplitText
               text="Engineered for system clarity."
@@ -53,15 +55,28 @@ export default function Page() {
               textAlign="center"
             />
           </h1>
-          <p className="text-zinc-400 text-sm md:text-base max-w-xl mt-6 leading-relaxed">
-            Obsidia streamlines your infrastructure tracking. Monitor system metrics, stream audit logs, and shield your core APIs in a beautifully integrated control plane designed for modern development teams.
-          </p>
+          <BlurText
+            text="Obsidia streamlines your infrastructure tracking. Monitor system metrics, stream audit logs, and shield your core APIs in a beautifully integrated control plane designed for modern development teams."
+            className="text-zinc-400 text-sm md:text-base max-w-xl mt-6 leading-relaxed"
+            delay={30}
+            animateBy="words"
+            direction="bottom"
+            initialDelay={3.2}
+          />
 
           <div className="flex items-center gap-4 mt-10">
-            <button className="bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-zinc-200/20">
-              Launch Console
+            <button className="relative overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg shadow-zinc-200/20 group">
+              {/* Implement sliding text reveal effect using absolute positioning and hover state translations */}
+              <span className="relative block overflow-hidden">
+                <span className="block transition-all duration-300 transform ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                  Launch Console
+                </span>
+                <span className="absolute inset-0 block transition-all duration-300 transform ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                  Launch Console
+                </span>
+              </span>
             </button>
-            <button className="px-6 py-3 rounded-full border border-zinc-700 hover:bg-zinc-800 transition-colors text-white font-medium">
+            <button className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-white font-medium">
               Read the Docs
             </button>
           </div>

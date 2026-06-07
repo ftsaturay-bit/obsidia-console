@@ -60,8 +60,15 @@ export default function Navbar() {
             <Link href="/signin" className="hidden sm:block text-zinc-400 hover:text-white transition-colors">
               Sign in
             </Link>
-            <button className="bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-zinc-200/20 font-semibold tracking-wide">
-              Launch Console
+            <button className="relative overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-5 py-2 rounded-full font-semibold tracking-wide shadow-lg shadow-zinc-200/20 group">
+              <span className="relative block overflow-hidden">
+                <span className="block transition-all duration-300 transform ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                  Launch Console
+                </span>
+                <span className="absolute inset-0 block transition-all duration-300 transform ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                  Launch Console
+                </span>
+              </span>
             </button>
           </div>
         </div>
