@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Beams from "@/components/Beams";
 import SplitText from "@/components/SplitText";
 import BlurText from "@/components/BlurText";
+import Orbit from "@/components/Orbit";
 
 export default function Page() {
   return (
@@ -80,6 +81,79 @@ export default function Page() {
               Read the Docs
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Stack Section — Two-Column Grid */}
+      <section className="relative bg-[#0A0908] z-10 overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-8 md:px-12 pt-4 pb-24 md:pt-0 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+
+          {/* Left Content Column */}
+          <div className="lg:col-span-6 flex flex-col text-left">
+            {/* Section label — small, sharp, widely spaced */}
+            <span className="text-[11px] font-semibold tracking-[0.25em] text-zinc-500 uppercase mb-8 block">
+              BUILT FOR MODERN WEB ARCHITECTURE
+            </span>
+
+            {/* Body copy — large, relaxed, with inline tech highlights */}
+            <p className="text-xl md:text-2xl font-normal text-zinc-400 tracking-tight leading-[1.4] max-w-xl">
+              If your app runs on{" "}
+              <span className="text-zinc-100 font-medium">Next.js</span>
+              , hosts on{" "}
+              <span className="text-zinc-100 font-medium">Vercel</span>
+              , uses{" "}
+              <span className="text-zinc-100 font-medium">Supabase</span>
+              {" "}or{" "}
+              <span className="text-zinc-100 font-medium">Neon</span>
+              {" "}for data, and syncs via{" "}
+              <span className="text-zinc-100 font-medium">Upstash</span>
+              , you can drop Obsidia right on top to shield your APIs and track your metrics instantly.
+            </p>
+
+            {/* CTA — sliding text reveal, matches hero button weight */}
+            <div className="mt-10 md:mt-12">
+              <button className="relative overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg shadow-zinc-200/20 group">
+                <span className="relative block overflow-hidden">
+                  <span className="block transition-all duration-300 transform ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                    Get started
+                  </span>
+                  <span className="absolute inset-0 block transition-all duration-300 transform ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                    Get started
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Orbit Column */}
+          <div className="lg:col-span-6 flex items-center justify-center h-[420px] md:h-[500px]">
+            <Orbit
+              images={[
+                "https://cdn.simpleicons.org/nextdotjs/ffffff",
+                "https://cdn.simpleicons.org/typescript/ffffff",
+                "https://cdn.simpleicons.org/supabase/ffffff",
+                "https://cdn.simpleicons.org/neon/ffffff",
+                "https://cdn.simpleicons.org/upstash/ffffff",
+                "https://cdn.simpleicons.org/resend/ffffff",
+                "https://cdn.simpleicons.org/vercel/ffffff",
+                "https://cdn.simpleicons.org/docker/ffffff",
+              ]}
+              altPrefix="Tech logo"
+              radius={170}
+              duration={28}
+              itemSize={52}
+              className="w-full h-full"
+              centerContent={
+                <img
+                  src="/logo1.png"
+                  alt="Obsidia Logo"
+                  className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
+                  draggable={false}
+                />
+              }
+            />
+          </div>
+
         </div>
       </section>
     </main>
