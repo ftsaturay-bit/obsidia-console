@@ -4,6 +4,7 @@ import SplitText from "@/components/SplitText";
 import BlurText from "@/components/BlurText";
 import Orbit from "@/components/Orbit";
 import FadeIn from "@/components/FadeIn";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Page() {
   return (
@@ -86,41 +87,45 @@ export default function Page() {
       </section>
 
       {/* Stack Section — Two-Column Grid */}
-      <section className="relative bg-[#0A0908] z-10 overflow-hidden">
+      <section className="relative bg-[#0A0908] z-10 overflow-hidden -mt-8 md:-mt-12">
         <div className="w-full max-w-7xl mx-auto px-8 md:px-12 pt-4 pb-24 md:pt-0 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
           {/* Left Content Column */}
           <div className="lg:col-span-6 flex flex-col text-left">
             {/* Minimal Eyebrow Label */}
-            <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
-              Built for Modern Stack
-            </span>
+            <ScrollReveal delay={0.1} yOffset={-15}>
+              <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
+                Built for Modern Stack
+              </span>
+            </ScrollReveal>
 
             {/* Striking Headline */}
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium tracking-tight text-white mb-6 leading-[1.15]">
-              Plugs seamlessly into your architecture.
-            </h2>
+            <ScrollReveal delay={0.2} yOffset={30}>
+              <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium tracking-tight text-white mb-6 leading-[1.15]">
+                Plugs seamlessly into your architecture.
+              </h2>
+            </ScrollReveal>
 
             {/* Editorial Body Copy with Glassmorphism Badges */}
-            <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg">
-              If your app runs on{" "}
-              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Next.js</span>
-              , hosts on{" "}
-              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Vercel</span>
-              , uses{" "}
-              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Supabase</span>
-              {" "}or{" "}
-              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Neon</span>
-              {" "}for data, and syncs via{" "}
-              <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Upstash</span>
-              , you can drop Obsidia right on top to shield your APIs and track your metrics instantly.
-            </p>
-
-
+            <ScrollReveal delay={0.2} yOffset={40}>
+              <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg">
+                If your app runs on{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Next.js</span>
+                , hosts on{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Vercel</span>
+                , uses{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Supabase</span>
+                {" "}or{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Neon</span>
+                {" "}for data, and syncs via{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Upstash</span>
+                , you can drop Obsidia right on top to shield your APIs and track your metrics instantly.
+              </p>
+            </ScrollReveal>
           </div>
 
           {/* Right Orbit Column */}
-          <div className="lg:col-span-6 flex items-center justify-center h-[420px] md:h-[500px]">
+          <ScrollReveal delay={0.7} xOffset={50} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[420px] md:h-[500px]">
             <Orbit
               items={[
                 { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
@@ -145,7 +150,7 @@ export default function Page() {
                 />
               }
             />
-          </div>
+          </ScrollReveal>
 
         </div>
       </section>
