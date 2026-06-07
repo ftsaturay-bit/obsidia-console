@@ -3,6 +3,7 @@ import Beams from "@/components/Beams";
 import SplitText from "@/components/SplitText";
 import BlurText from "@/components/BlurText";
 import Orbit from "@/components/Orbit";
+import FadeIn from "@/components/FadeIn";
 
 export default function Page() {
   return (
@@ -65,7 +66,7 @@ export default function Page() {
             initialDelay={3.2}
           />
 
-          <div className="flex items-center gap-4 mt-10">
+          <FadeIn delay={3.6} className="flex items-center gap-4 mt-10">
             <button className="relative overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-300 text-zinc-950 px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg shadow-zinc-200/20 group">
               {/* Implement sliding text reveal effect using absolute positioning and hover state translations */}
               <span className="relative block overflow-hidden">
@@ -80,7 +81,7 @@ export default function Page() {
             <button className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-white font-medium">
               Read the Docs
             </button>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
