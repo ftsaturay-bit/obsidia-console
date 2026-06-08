@@ -5,10 +5,11 @@ import BlurText from "@/components/BlurText";
 import Orbit from "@/components/Orbit";
 import FadeIn from "@/components/FadeIn";
 import ScrollReveal from "@/components/ScrollReveal";
+import ReverseRevealCard from "@/components/ReverseRevealCard";
 
 export default function Page() {
   return (
-    <main className="min-h-[200vh] bg-[#0A0908] text-white relative">
+    <main className="min-h-screen bg-[#0A0908] text-white relative">
       <Navbar />
 
       {/* Hero Section */}
@@ -87,8 +88,8 @@ export default function Page() {
       </section>
 
       {/* Stack Section — Two-Column Grid */}
-      <section className="relative bg-[#0A0908] z-10 overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-8 md:px-12 pt-4 pb-24 md:pt-0 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+      <section className="relative bg-[#0A0908] sticky top-0 z-10 min-h-screen flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
           {/* Left Content Column */}
           <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -154,6 +155,9 @@ export default function Page() {
 
         </div>
       </section>
+
+      {/* Expanding Card — Features Reveal */}
+      <ReverseRevealCard />
     </main>
   );
 }
