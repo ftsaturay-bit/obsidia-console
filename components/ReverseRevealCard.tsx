@@ -151,6 +151,104 @@ function VaultVisual() {
   );
 }
 
+function MapVisual() {
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex items-center justify-center">
+        <svg viewBox="0 0 200 100" className="w-full h-full opacity-60">
+          <path d="M40 30 L80 20 L120 40 L160 30 L180 60 L140 80 L90 70 L50 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="2 2" />
+          <path d="M80 20 L90 70 M120 40 L90 70 M40 30 L90 70 M160 30 L90 70" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+          
+          {/* Nodes */}
+          <circle cx="40" cy="30" r="3" fill="#fff" />
+          <circle cx="80" cy="20" r="4" fill="#b78a62" />
+          <circle cx="120" cy="40" r="3" fill="#fff" />
+          <circle cx="160" cy="30" r="4" fill="#b78a62" />
+          <circle cx="180" cy="60" r="3" fill="#fff" />
+          <circle cx="140" cy="80" r="3" fill="#fff" />
+          <circle cx="90" cy="70" r="5" fill="#fff" />
+          <circle cx="50" cy="80" r="3" fill="#fff" />
+
+          {/* Active Ping on main node */}
+          <circle cx="90" cy="70" r="12" fill="none" stroke="#b78a62" strokeWidth="1" opacity="0.5" />
+        </svg>
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        EDGE RUNTIME DEPLOYMENT
+      </span>
+    </div>
+  );
+}
+
+function SyncVisual() {
+  const syncLines = [
+    { region: "us-east-1", latency: "12ms", status: "SYNCED" },
+    { region: "eu-west-2", latency: "24ms", status: "SYNCED" },
+    { region: "ap-northeast-1", latency: "45ms", status: "SYNCED" },
+    { region: "sa-east-1", latency: "38ms", status: "SYNCED" },
+  ];
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] font-mono text-[11px] leading-[2.2] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col justify-center">
+        {syncLines.map((l, i) => (
+          <div key={i} className="flex justify-between items-center hover:bg-white/[0.05] transition-colors rounded px-2 -mx-2">
+            <span className="text-zinc-200 tracking-wider flex items-center gap-2">
+               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+               {l.region}
+            </span>
+            <div className="flex gap-4">
+              <span className="text-zinc-500">{l.latency}</span>
+              <span className="text-zinc-400 font-semibold">{l.status}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        GLOBAL STATE SYNCHRONIZATION
+      </span>
+    </div>
+  );
+}
+
+function FaultVisual() {
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col justify-center gap-4">
+        
+        <div className="flex items-stretch gap-2 w-full h-12">
+          <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center relative overflow-hidden">
+             <div className="absolute inset-0 bg-emerald-500/5" />
+             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE A</span>
+          </div>
+          <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center relative overflow-hidden">
+             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE B</span>
+          </div>
+        </div>
+
+        <div className="flex items-stretch gap-2 w-full h-12">
+          <div className="flex-1 bg-rose-500/10 border border-rose-500/30 rounded-lg flex items-center justify-center relative overflow-hidden">
+             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, #f43f5e 4px, #f43f5e 8px)' }} />
+             <span className="text-[10px] text-rose-500 font-mono font-bold relative z-10">FAULT C</span>
+          </div>
+          <div className="w-8 flex items-center justify-center">
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+             </svg>
+          </div>
+          <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center">
+             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE D</span>
+          </div>
+        </div>
+
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        ISOLATED FAULT TOLERANCE
+      </span>
+    </div>
+  );
+}
+
 /* ─── Main Component ────────────────────────────────────────────── */
 
 export default function ReverseRevealCard() {
@@ -247,6 +345,36 @@ export default function ReverseRevealCard() {
               <CodeVisual />
               <NodesVisual />
               <VaultVisual />
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-white/[0.05] my-24 lg:my-32" />
+
+          {/* 03 Feature Block */}
+          <div className="flex flex-col flex-1 justify-between pb-24">
+            {/* Editorial Typography Layer */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div className="lg:col-span-7">
+                <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                  03 | GLOBAL EDGE
+                </span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
+                  Distributed execution. Zero cold starts.
+                </h2>
+              </div>
+              <div className="lg:col-span-5 lg:pt-11">
+                <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
+                  Deploy routing logic and security rules across a multi-region substrate. Your system configurations are replicated globally in milliseconds, keeping compute physically close to your users.
+                </p>
+              </div>
+            </div>
+
+            {/* Interactive Control Panel Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24">
+              <MapVisual />
+              <SyncVisual />
+              <FaultVisual />
             </div>
           </div>
 
