@@ -10,8 +10,8 @@ function ShieldVisual() {
 
   return (
     <div className="w-full flex flex-col h-full">
-      <div className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 relative overflow-hidden min-h-[180px] group-hover:bg-white/[0.05] transition-colors duration-500">
-        <span className="text-[10px] text-zinc-400 font-mono tracking-widest uppercase font-bold">LIVE TRAFFIC SPAN</span>
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col">
+        <span className="text-[10px] text-zinc-400 font-mono tracking-widest uppercase font-bold mb-2">LIVE TRAFFIC SPAN</span>
         <svg viewBox="0 0 160 60" className="w-full h-full mt-4" preserveAspectRatio="none">
           <defs>
             <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
@@ -25,7 +25,7 @@ function ShieldVisual() {
           <text x="156" y="22" fill="rgba(255,255,255,0.7)" fontSize="7" fontFamily="monospace" textAnchor="end" letterSpacing="0.05em" fontWeight="bold">SHIELD ACTIVE</text>
         </svg>
       </div>
-      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block mt-4 uppercase font-bold">
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
         INCOMING ATTACKS BLOCKING: 100%
       </span>
     </div>
@@ -42,7 +42,7 @@ function LogVisual() {
   ];
   return (
     <div className="w-full flex flex-col h-full">
-      <div className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 relative overflow-hidden min-h-[180px] font-mono text-[11px] leading-[2.2]">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] font-mono text-[11px] leading-[2.2] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col justify-center">
         {lines.map((l, i) => (
           <div key={i} className="flex gap-3 hover:bg-white/[0.05] transition-colors rounded px-2 -mx-2">
             <span className="text-zinc-200 font-bold tracking-wider">{l.type}</span>
@@ -50,7 +50,7 @@ function LogVisual() {
           </div>
         ))}
       </div>
-      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block mt-4 uppercase font-bold">
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
         CRYPTOGRAPHIC LEDGER SECURE
       </span>
     </div>
@@ -60,7 +60,7 @@ function LogVisual() {
 function MetricsVisual() {
   return (
     <div className="w-full flex flex-col h-full">
-      <div className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 relative overflow-hidden min-h-[180px] flex flex-col justify-center gap-6">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] flex flex-col justify-center gap-8 hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500">
         <div className="flex flex-col">
           <span className="text-3xl lg:text-4xl font-medium text-white tracking-tight leading-none mb-1">0.4ms</span>
           <span className="text-[10px] text-zinc-400 tracking-widest uppercase font-bold">Latency p99</span>
@@ -70,8 +70,82 @@ function MetricsVisual() {
           <span className="text-[10px] text-zinc-400 tracking-widest uppercase font-bold">Uptime Reliability</span>
         </div>
       </div>
-      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block mt-4 uppercase font-bold">
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
         RUNTIME OVERHEAD: EXTREMELY LOW
+      </span>
+    </div>
+  );
+}
+
+function CodeVisual() {
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col justify-center">
+        <div className="font-mono text-[10px] sm:text-[11px] leading-[1.8] text-zinc-400">
+          <span className="text-[#b78a62]">import</span> {"{ "}Obsidia{" }"} <span className="text-[#b78a62]">from</span> <span className="text-zinc-200">"@obsidia/core"</span>;
+          <br /><br />
+          <span className="text-zinc-500">// Initialize edge protection</span><br />
+          <span className="text-[#b78a62]">const</span> shield = <span className="text-[#b78a62]">new</span> <span className="text-white">Obsidia</span>({"{"}<br />
+          &nbsp;&nbsp;env: <span className="text-zinc-200">"production"</span>,<br />
+          &nbsp;&nbsp;strictMode: <span className="text-[#b78a62]">true</span>,<br />
+          &nbsp;&nbsp;region: <span className="text-zinc-200">"global-edge"</span><br />
+          {"}"});
+        </div>
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        DECLARATIVE CONFIGURATION
+      </span>
+    </div>
+  );
+}
+
+function NodesVisual() {
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex items-center justify-center">
+        <svg viewBox="0 0 160 100" className="w-full h-full opacity-70">
+          <path d="M20 50 L80 20 L140 50 L80 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
+          <path d="M80 20 L80 80" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
+          <circle cx="20" cy="50" r="4" fill="#b78a62" />
+          <circle cx="80" cy="20" r="4" fill="#fff" />
+          <circle cx="140" cy="50" r="4" fill="#b78a62" />
+          <circle cx="80" cy="80" r="4" fill="#fff" />
+          
+          <circle cx="80" cy="50" r="16" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
+          <circle cx="80" cy="50" r="6" fill="#fff" />
+        </svg>
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        CROSS-ENVIRONMENT SYNCHRONIZATION
+      </span>
+    </div>
+  );
+}
+
+function VaultVisual() {
+  return (
+    <div className="w-full flex flex-col h-full">
+      <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col items-center justify-center gap-4">
+        
+        <div className="flex items-center gap-3 w-full bg-white/[0.03] rounded-xl p-4 border border-white/[0.05]">
+           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+           <div className="flex flex-col">
+             <span className="text-[9px] text-zinc-500 uppercase font-mono">Primary Key</span>
+             <span className="text-xs font-mono text-zinc-200">sk_live_...9f2a</span>
+           </div>
+        </div>
+
+        <div className="flex items-center gap-3 w-full bg-white/[0.02] rounded-xl p-4 border border-white/[0.02] opacity-50">
+           <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+           <div className="flex flex-col">
+             <span className="text-[9px] text-zinc-500 uppercase font-mono">Rotating</span>
+             <span className="text-xs font-mono text-zinc-400">sk_next_...4e1b</span>
+           </div>
+        </div>
+
+      </div>
+      <span className="text-[10px] font-mono tracking-widest text-zinc-300 block text-center mt-4 uppercase font-bold">
+        ZERO-TRUST KEY PROVISIONING
       </span>
     </div>
   );
@@ -125,7 +199,7 @@ export default function ReverseRevealCard() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
                 <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
-                  01 / SYSTEM VISIBILITY
+                  01 | SYSTEM VISIBILITY
                 </span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
                   Telemetry at the speed of the edge.
@@ -143,6 +217,36 @@ export default function ReverseRevealCard() {
               <ShieldVisual />
               <LogVisual />
               <MetricsVisual />
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-white/[0.05] my-24 lg:my-32" />
+
+          {/* 02 Feature Block */}
+          <div className="flex flex-col flex-1 justify-between pb-24">
+            {/* Editorial Typography Layer */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div className="lg:col-span-7">
+                <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                  02 | DEVELOPER ENGINE
+                </span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
+                  Programmable infrastructure. Local to edge.
+                </h2>
+              </div>
+              <div className="lg:col-span-5 lg:pt-11">
+                <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
+                  Manage environments, provision encryption keys, and deploy automated edge policies directly from your terminal or unified schema manifests without workflow context switching.
+                </p>
+              </div>
+            </div>
+
+            {/* Interactive Control Panel Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24">
+              <CodeVisual />
+              <NodesVisual />
+              <VaultVisual />
             </div>
           </div>
 
