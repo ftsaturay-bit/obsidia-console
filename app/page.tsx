@@ -158,6 +158,19 @@ export default function Page() {
 
       {/* Expanding Card — Features Reveal */}
       <ReverseRevealCard />
+
+      {/* Footer / CTA Section */}
+      <footer className="relative z-20 w-full bg-[#0A0908] pb-24 pt-32 flex flex-col items-center justify-center text-center">
+        <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">
+          Ready to scale?
+        </h2>
+        <p className="text-zinc-400 max-w-md mx-auto mb-10">
+          Join thousands of developers building fast, secure, and resilient edge applications with Obsidia.
+        </p>
+        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
+          Start Building for Free
+        </button>
+      </footer>
     </main>
   );
 }

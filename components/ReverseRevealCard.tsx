@@ -253,8 +253,8 @@ function FaultVisual() {
 
 export default function ReverseRevealCard() {
   return (
-    <section className="sticky top-0 z-30 w-full">
-      <div className="relative w-full min-h-screen bg-[#0A0604] border-t border-[#2A2420] rounded-t-[32px] overflow-hidden group shadow-[0_-24px_60px_rgba(0,0,0,0.7)] flex flex-col justify-center p-8 md:p-14">
+    <section className="relative z-30 w-full">
+      <div className="relative w-full min-h-screen bg-[#0A0604] border border-[#2A2420] rounded-[32px] overflow-hidden group shadow-[0_-24px_60px_rgba(0,0,0,0.7)] flex flex-col justify-center p-8 md:p-14">
 
         {/* WebGL Animated Grainient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
