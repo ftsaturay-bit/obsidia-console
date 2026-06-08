@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto w-full h-full flex items-center justify-between px-8 md:px-12">
           {/* Left: Logo + Brand Name */}
           <div className="flex items-center gap-2">
-            <Image src="/logo1.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
+            <Image src="/logo2.png" alt="Obsidia Logo" width={24} height={32} className="w-auto h-7 object-contain drop-shadow-md" />
             <span className="font-semibold text-white tracking-tight text-lg">obsidia</span>
           </div>
 

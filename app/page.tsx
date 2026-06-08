@@ -87,7 +87,7 @@ export default function Page() {
       </section>
 
       {/* Stack Section — Two-Column Grid */}
-      <section className="relative bg-[#0A0908] z-10 overflow-hidden -mt-8 md:-mt-12">
+      <section className="relative bg-[#0A0908] z-10 overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-8 md:px-12 pt-4 pb-24 md:pt-0 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
           {/* Left Content Column */}
@@ -143,7 +143,7 @@ export default function Page() {
               className="w-full h-full"
               centerContent={
                 <img
-                  src="/logo1.png"
+                  src="/logo2.png"
                   alt="Obsidia Logo"
                   className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
                   draggable={false}
