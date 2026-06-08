@@ -91,7 +91,7 @@ export default function Page() {
         <div className="w-full max-w-7xl mx-auto px-8 md:px-12 pt-4 pb-24 md:pt-0 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
           {/* Left Content Column */}
-          <div className="lg:col-span-6 flex flex-col text-left">
+          <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Minimal Eyebrow Label */}
             <ScrollReveal delay={0.1} yOffset={-15}>
               <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
@@ -108,48 +108,48 @@ export default function Page() {
 
             {/* Editorial Body Copy with Glassmorphism Badges */}
             <ScrollReveal delay={0.2} yOffset={40}>
-              <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg">
-                If your app runs on{" "}
-                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Next.js</span>
-                , hosts on{" "}
-                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Vercel</span>
-                , uses{" "}
-                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Supabase</span>
-                {" "}or{" "}
-                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Neon</span>
-                {" "}for data, and syncs via{" "}
-                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">Upstash</span>
-                , you can drop Obsidia right on top to shield your APIs and track your metrics instantly.
+              <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg mx-auto lg:mx-0">
+                Engineered to sit directly between your{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">client-side runtimes</span>
+                {" "}and backend{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">data layers</span>
+                . Obsidia acts as a unified{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">control plane</span>
+                , executing immediate{" "}
+                <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">API shielding</span>
+                {" "}and continuous system tracking without touching your core business logic.
               </p>
             </ScrollReveal>
           </div>
 
           {/* Right Orbit Column */}
-          <ScrollReveal delay={0.7} xOffset={50} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[420px] md:h-[500px]">
-            <Orbit
-              items={[
-                { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
-                { src: "https://cdn.simpleicons.org/typescript/ffffff", name: "TypeScript" },
-                { src: "https://cdn.simpleicons.org/supabase/ffffff", name: "Supabase" },
-                { src: "https://cdn.simpleicons.org/neon/ffffff", name: "Neon" },
-                { src: "https://cdn.simpleicons.org/upstash/ffffff", name: "Upstash" },
-                { src: "https://cdn.simpleicons.org/resend/ffffff", name: "Resend" },
-                { src: "https://cdn.simpleicons.org/vercel/ffffff", name: "Vercel" },
-                { src: "https://cdn.simpleicons.org/docker/ffffff", name: "Docker" },
-              ]}
-              radius={170}
-              duration={28}
-              itemSize={52}
-              className="w-full h-full"
-              centerContent={
-                <img
-                  src="/logo2.png"
-                  alt="Obsidia Logo"
-                  className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
-                  draggable={false}
-                />
-              }
-            />
+          <ScrollReveal delay={0.7} xOffset={50} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[340px] sm:h-[420px] md:h-[500px]">
+            <div className="scale-[0.65] sm:scale-75 md:scale-100 flex items-center justify-center w-full h-full">
+              <Orbit
+                items={[
+                  { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
+                  { src: "https://cdn.simpleicons.org/typescript/ffffff", name: "TypeScript" },
+                  { src: "https://cdn.simpleicons.org/supabase/ffffff", name: "Supabase" },
+                  { src: "https://cdn.simpleicons.org/neon/ffffff", name: "Neon" },
+                  { src: "https://cdn.simpleicons.org/upstash/ffffff", name: "Upstash" },
+                  { src: "https://cdn.simpleicons.org/resend/ffffff", name: "Resend" },
+                  { src: "https://cdn.simpleicons.org/vercel/ffffff", name: "Vercel" },
+                  { src: "https://cdn.simpleicons.org/docker/ffffff", name: "Docker" },
+                ]}
+                radius={170}
+                duration={28}
+                itemSize={52}
+                className="w-full h-full"
+                centerContent={
+                  <img
+                    src="/logo2.png"
+                    alt="Obsidia Logo"
+                    className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
+                    draggable={false}
+                  />
+                }
+              />
+            </div>
           </ScrollReveal>
 
         </div>
