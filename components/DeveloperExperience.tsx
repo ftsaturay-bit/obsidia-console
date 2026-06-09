@@ -50,13 +50,11 @@ export default app;`
 
 export default function DeveloperExperience() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
-
   const activeContent = TABS.find((t) => t.id === activeTab)?.code || "";
 
   return (
-    <section className="relative z-20 w-full bg-[#0A0908] border-t border-zinc-900/60 py-24 md:py-36">
+    <section className="w-full min-h-screen flex flex-col justify-center border-t border-zinc-900/60 bg-gradient-to-b from-zinc-950/20 to-black py-24 md:py-36 relative z-20">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
-        
         {/* THE NEW DISTINCT CATEGORY HEADER */}
         <div className="mb-12 text-left">
           <span className="text-[10px] font-mono tracking-[0.4em] text-zinc-600 uppercase">
@@ -78,7 +76,7 @@ export default function DeveloperExperience() {
           </div>
 
           {/* RIGHT: THE TERMINAL COMPONENT */}
-          <div className="rounded-2xl border border-zinc-800/50 bg-[#0A0908]/80 backdrop-blur-xl overflow-hidden shadow-2xl flex flex-col">
+          <div className="rounded-2xl border border-zinc-900 bg-zinc-950/60 overflow-hidden shadow-2xl flex flex-col">
             {/* Terminal Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800/50 bg-zinc-900/20">
               <div className="flex items-center gap-2">

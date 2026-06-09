@@ -88,9 +88,23 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Stack Section — Two-Column Grid */}
-      <section className="relative bg-[#0A0908] sticky top-0 z-10 min-h-screen flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+      {/* PERFECT REVEAL GRID */}
+      <div className="grid w-full">
+        
+        {/* BACKGROUND REVEAL LAYER */}
+        <div className="[grid-area:1/1] relative w-full z-0 flex flex-col justify-end">
+          <div className="sticky bottom-0 w-full">
+            <DeveloperExperience />
+          </div>
+        </div>
+
+        {/* FOREGROUND COVER LAYER */}
+        <div className="[grid-area:1/1] relative w-full z-10 flex flex-col">
+          {/* Opaque content that covers the background layer */}
+          <div className="relative w-full bg-[#0A0908]">
+            {/* Stack Section — Two-Column Grid */}
+            <section className="relative bg-[#0A0908] sticky top-0 z-10 min-h-screen flex items-center">
+              <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
           {/* Left Content Column */}
           <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -154,33 +168,17 @@ export default function Page() {
             </div>
           </ScrollReveal>
 
+              </div>
+            </section>
+
+            {/* Expanding Card — Features Reveal */}
+            <ReverseRevealCard />
+          </div>
+
+          {/* Transparent spacer matches DeveloperExperience's min-h-screen to allow it to be fully revealed */}
+          <div className="w-full h-screen pointer-events-none" />
         </div>
-      </section>
-
-      {/* Expanding Card — Features Reveal */}
-      <ReverseRevealCard />
-
-      {/* Developer Experience / Terminal Section */}
-      <DeveloperExperience />
-
-      {/* Footer / CTA Section */}
-      <footer className="relative z-20 w-full bg-[#0A0908] pb-24 pt-32 flex flex-col items-center justify-center text-center">
-        <ScrollReveal variant="blur" delay={0.05} duration={0.9}>
-          <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">
-            Ready to scale?
-          </h2>
-        </ScrollReveal>
-        <ScrollReveal variant="fade" delay={0.2}>
-          <p className="text-zinc-400 max-w-md mx-auto mb-10">
-            Join thousands of developers building fast, secure, and resilient edge applications with Obsidia.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal variant="scale" delay={0.35} duration={0.65}>
-          <button className="bg-white text-black px-8 py-4 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
-            Start Building for Free
-          </button>
-        </ScrollReveal>
-      </footer>
+      </div>
     </main>
   );
 }
