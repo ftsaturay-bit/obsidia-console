@@ -1,6 +1,7 @@
 "use client";
 
 import Grainient from "@/components/Grainient";
+import ScrollReveal, { StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
 
 /* ─── Inner Visualizers ─────────────────────────────────────────── */
 
@@ -110,7 +111,7 @@ function NodesVisual() {
           <circle cx="80" cy="20" r="4" fill="#fff" />
           <circle cx="140" cy="50" r="4" fill="#b78a62" />
           <circle cx="80" cy="80" r="4" fill="#fff" />
-          
+
           <circle cx="80" cy="50" r="16" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
           <circle cx="80" cy="50" r="6" fill="#fff" />
         </svg>
@@ -126,21 +127,21 @@ function VaultVisual() {
   return (
     <div className="w-full flex flex-col h-full">
       <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col items-center justify-center gap-4">
-        
+
         <div className="flex items-center gap-3 w-full bg-white/[0.03] rounded-xl p-4 border border-white/[0.05]">
-           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
-           <div className="flex flex-col">
-             <span className="text-[9px] text-zinc-500 uppercase font-mono">Primary Key</span>
-             <span className="text-xs font-mono text-zinc-200">sk_live_...9f2a</span>
-           </div>
+          <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+          <div className="flex flex-col">
+            <span className="text-[9px] text-zinc-500 uppercase font-mono">Primary Key</span>
+            <span className="text-xs font-mono text-zinc-200">sk_live_...9f2a</span>
+          </div>
         </div>
 
         <div className="flex items-center gap-3 w-full bg-white/[0.02] rounded-xl p-4 border border-white/[0.02] opacity-50">
-           <div className="w-2 h-2 rounded-full bg-amber-500"></div>
-           <div className="flex flex-col">
-             <span className="text-[9px] text-zinc-500 uppercase font-mono">Rotating</span>
-             <span className="text-xs font-mono text-zinc-400">sk_next_...4e1b</span>
-           </div>
+          <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+          <div className="flex flex-col">
+            <span className="text-[9px] text-zinc-500 uppercase font-mono">Rotating</span>
+            <span className="text-xs font-mono text-zinc-400">sk_next_...4e1b</span>
+          </div>
         </div>
 
       </div>
@@ -158,7 +159,7 @@ function MapVisual() {
         <svg viewBox="0 0 200 100" className="w-full h-full opacity-60">
           <path d="M40 30 L80 20 L120 40 L160 30 L180 60 L140 80 L90 70 L50 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="2 2" />
           <path d="M80 20 L90 70 M120 40 L90 70 M40 30 L90 70 M160 30 L90 70" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
-          
+
           {/* Nodes */}
           <circle cx="40" cy="30" r="3" fill="#fff" />
           <circle cx="80" cy="20" r="4" fill="#b78a62" />
@@ -193,8 +194,8 @@ function SyncVisual() {
         {syncLines.map((l, i) => (
           <div key={i} className="flex justify-between items-center hover:bg-white/[0.05] transition-colors rounded px-2 -mx-2">
             <span className="text-zinc-200 tracking-wider flex items-center gap-2">
-               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-               {l.region}
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              {l.region}
             </span>
             <div className="flex gap-4">
               <span className="text-zinc-500">{l.latency}</span>
@@ -214,30 +215,30 @@ function FaultVisual() {
   return (
     <div className="w-full flex flex-col h-full">
       <div className="flex-1 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md rounded-3xl p-8 relative overflow-hidden min-h-[200px] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(255,255,255,0.03)] transition-all duration-500 flex flex-col justify-center gap-4">
-        
+
         <div className="flex items-stretch gap-2 w-full h-12">
           <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center relative overflow-hidden">
-             <div className="absolute inset-0 bg-emerald-500/5" />
-             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE A</span>
+            <div className="absolute inset-0 bg-emerald-500/5" />
+            <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE A</span>
           </div>
           <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center relative overflow-hidden">
-             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE B</span>
+            <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE B</span>
           </div>
         </div>
 
         <div className="flex items-stretch gap-2 w-full h-12">
           <div className="flex-1 bg-rose-500/10 border border-rose-500/30 rounded-lg flex items-center justify-center relative overflow-hidden">
-             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, #f43f5e 4px, #f43f5e 8px)' }} />
-             <span className="text-[10px] text-rose-500 font-mono font-bold relative z-10">FAULT C</span>
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, #f43f5e 4px, #f43f5e 8px)' }} />
+            <span className="text-[10px] text-rose-500 font-mono font-bold relative z-10">FAULT C</span>
           </div>
           <div className="w-8 flex items-center justify-center">
-             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-             </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
           </div>
           <div className="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center">
-             <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE D</span>
+            <span className="text-[10px] text-emerald-500 font-mono font-bold">NODE D</span>
           </div>
         </div>
 
@@ -259,7 +260,7 @@ export default function ReverseRevealCard() {
         {/* WebGL Animated Grainient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Grainient
-            color1="#866d40ff"
+            color1="#675533ff"
             color2="#5f5340ff"
             color3="#34240bff"
             timeSpeed={0.15}
@@ -278,17 +279,18 @@ export default function ReverseRevealCard() {
 
           {/* Top Level Section Header - Fabrica Style */}
           <div className="relative flex items-center justify-center border-b border-white/[0.1] pb-16 mb-16 lg:mb-24 pt-8">
-
-            {/* Massive Centered Title */}
-            <div className="flex items-start">
-              <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-medium text-white tracking-tighter leading-none">
-                Capabilities.
-              </h2>
-              <span className="text-2xl md:text-4xl font-medium text-zinc-400 ml-4 mt-2 md:mt-6 tracking-tight">
-                (3)
-              </span>
-            </div>
-
+            <ScrollReveal variant="scale" delay={0.05} duration={1.0}>
+              <div className="flex items-start">
+                <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-medium text-white tracking-tighter leading-none">
+                  Capabilities.
+                </h2>
+                <ScrollReveal variant="fade" delay={0.3} duration={0.9}>
+                  <span className="text-2xl md:text-4xl font-medium text-zinc-400 ml-4 mt-2 md:mt-6 tracking-tight">
+                    (3)
+                  </span>
+                </ScrollReveal>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* 01 Feature Block */}
@@ -296,26 +298,30 @@ export default function ReverseRevealCard() {
             {/* Editorial Typography Layer */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
-                <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
-                  01 | SYSTEM VISIBILITY
-                </span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                  Telemetry at the speed of the edge.
-                </h2>
+                <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
+                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                    01 | SYSTEM VISIBILITY
+                  </span>
+                </ScrollReveal>
+                <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
+                    Telemetry at the speed of the edge.
+                  </h2>
+                </ScrollReveal>
               </div>
-              <div className="lg:col-span-5 lg:pt-11">
+              <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
                 <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
                   Obsidia synthesizes immediate API shielding, immutable log streams, and ultra-low latency runtime metrics into a singular, high-fidelity control plane.
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24">
-              <ShieldVisual />
-              <LogVisual />
-              <MetricsVisual />
-            </div>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+              <StaggerItem variant="scale"><ShieldVisual /></StaggerItem>
+              <StaggerItem variant="scale"><LogVisual /></StaggerItem>
+              <StaggerItem variant="scale"><MetricsVisual /></StaggerItem>
+            </StaggerReveal>
           </div>
 
           {/* Divider */}
@@ -326,26 +332,30 @@ export default function ReverseRevealCard() {
             {/* Editorial Typography Layer */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
-                <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
-                  02 | DEVELOPER ENGINE
-                </span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                  Programmable infrastructure. Local to edge.
-                </h2>
+                <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
+                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                    02 | DEVELOPER ENGINE
+                  </span>
+                </ScrollReveal>
+                <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
+                    Programmable infrastructure. Local to edge.
+                  </h2>
+                </ScrollReveal>
               </div>
-              <div className="lg:col-span-5 lg:pt-11">
+              <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
                 <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
                   Manage environments, provision encryption keys, and deploy automated edge policies directly from your terminal or unified schema manifests without workflow context switching.
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24">
-              <CodeVisual />
-              <NodesVisual />
-              <VaultVisual />
-            </div>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+              <StaggerItem variant="scale"><CodeVisual /></StaggerItem>
+              <StaggerItem variant="scale"><NodesVisual /></StaggerItem>
+              <StaggerItem variant="scale"><VaultVisual /></StaggerItem>
+            </StaggerReveal>
           </div>
 
           {/* Divider */}
@@ -356,26 +366,30 @@ export default function ReverseRevealCard() {
             {/* Editorial Typography Layer */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
-                <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
-                  03 | GLOBAL EDGE
-                </span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                  Distributed execution. Zero cold starts.
-                </h2>
+                <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
+                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                    03 | GLOBAL EDGE
+                  </span>
+                </ScrollReveal>
+                <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
+                    Distributed execution. Zero cold starts.
+                  </h2>
+                </ScrollReveal>
               </div>
-              <div className="lg:col-span-5 lg:pt-11">
+              <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
                 <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
                   Deploy routing logic and security rules across a multi-region substrate. Your system configurations are replicated globally in milliseconds, keeping compute physically close to your users.
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24">
-              <MapVisual />
-              <SyncVisual />
-              <FaultVisual />
-            </div>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+              <StaggerItem variant="scale"><MapVisual /></StaggerItem>
+              <StaggerItem variant="scale"><SyncVisual /></StaggerItem>
+              <StaggerItem variant="scale"><FaultVisual /></StaggerItem>
+            </StaggerReveal>
           </div>
 
         </div>

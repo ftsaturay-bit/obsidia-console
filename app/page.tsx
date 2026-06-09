@@ -94,21 +94,21 @@ export default function Page() {
           {/* Left Content Column */}
           <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Minimal Eyebrow Label */}
-            <ScrollReveal delay={0.1} yOffset={-15}>
+            <ScrollReveal variant="slide" delay={0.05} yOffset={14}>
               <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
                 Built for Modern Stack
               </span>
             </ScrollReveal>
 
             {/* Striking Headline */}
-            <ScrollReveal delay={0.2} yOffset={30}>
+            <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium tracking-tight text-white mb-6 leading-[1.15]">
                 Plugs seamlessly into your architecture.
               </h2>
             </ScrollReveal>
 
             {/* Editorial Body Copy with Glassmorphism Badges */}
-            <ScrollReveal delay={0.2} yOffset={40}>
+            <ScrollReveal variant="fade" delay={0.3}>
               <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg mx-auto lg:mx-0">
                 Engineered to sit directly between your{" "}
                 <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">client-side runtimes</span>
@@ -124,7 +124,7 @@ export default function Page() {
           </div>
 
           {/* Right Orbit Column */}
-          <ScrollReveal delay={0.7} xOffset={50} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[340px] sm:h-[420px] md:h-[500px]">
+          <ScrollReveal variant="fade" delay={0.5} xOffset={40} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[340px] sm:h-[420px] md:h-[500px]">
             <div className="scale-[0.65] sm:scale-75 md:scale-100 flex items-center justify-center w-full h-full">
               <Orbit
                 items={[
@@ -161,15 +161,21 @@ export default function Page() {
 
       {/* Footer / CTA Section */}
       <footer className="relative z-20 w-full bg-[#0A0908] pb-24 pt-32 flex flex-col items-center justify-center text-center">
-        <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">
-          Ready to scale?
-        </h2>
-        <p className="text-zinc-400 max-w-md mx-auto mb-10">
-          Join thousands of developers building fast, secure, and resilient edge applications with Obsidia.
-        </p>
-        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
-          Start Building for Free
-        </button>
+        <ScrollReveal variant="blur" delay={0.05} duration={0.9}>
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">
+            Ready to scale?
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal variant="fade" delay={0.2}>
+          <p className="text-zinc-400 max-w-md mx-auto mb-10">
+            Join thousands of developers building fast, secure, and resilient edge applications with Obsidia.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal variant="scale" delay={0.35} duration={0.65}>
+          <button className="bg-white text-black px-8 py-4 rounded-full font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
+            Start Building for Free
+          </button>
+        </ScrollReveal>
       </footer>
     </main>
   );

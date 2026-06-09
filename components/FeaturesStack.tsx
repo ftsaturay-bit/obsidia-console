@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import ScrollReveal, { StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
 
 /* ─── Sub-visualizers ──────────────────────────────────────────── */
 
@@ -104,20 +105,22 @@ export default function FeaturesStack() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#b78a62]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
         {/* ── Header Block ── */}
-        <div>
+        <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
           <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-4 block">
             01 / Core Capabilities
           </span>
+        </ScrollReveal>
+        <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
           <h2 className="text-3xl md:text-5xl font-normal text-zinc-100 tracking-tight leading-tight max-w-xl">
             Complete structural authority over your system data.
           </h2>
-        </div>
+        </ScrollReveal>
 
         {/* ── Graphic Workspace ── */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-5 flex-1 items-end">
+        <StaggerReveal className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-5 flex-1 items-end" baseDelay={0.3} staggerDelay={0.12}>
 
           {/* Telemetry Stats — left pillar */}
-          <div className="md:col-span-3 flex flex-col justify-end gap-6 h-full">
+          <StaggerItem variant="slide" className="md:col-span-3 flex flex-col justify-end gap-6 h-full">
             <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 space-y-5">
               <div className="text-[10px] text-zinc-500 tracking-widest uppercase">Performance Telemetry</div>
               <div className="grid grid-cols-2 gap-x-6 gap-y-4">
@@ -146,10 +149,10 @@ export default function FeaturesStack() {
                 </div>
               ))}
             </div>
-          </div>
+          </StaggerItem>
 
           {/* Sparkline + Shield Chart — center */}
-          <div className="md:col-span-6 flex flex-col gap-5 h-full justify-end">
+          <StaggerItem variant="scale" className="md:col-span-6 flex flex-col gap-5 h-full justify-end">
             {/* Request Volume */}
             <div className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-5 flex-1 min-h-[140px] flex flex-col">
               <div className="flex items-center justify-between mb-3">
@@ -178,10 +181,10 @@ export default function FeaturesStack() {
                 <ShieldGraph />
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* Audit Log Stream — right pillar */}
-          <div className="md:col-span-3 h-full flex flex-col justify-end">
+          <StaggerItem variant="slide" yOffset={32} className="md:col-span-3 h-full flex flex-col justify-end">
             <div className="bg-white/[0.02] border border-white/[0.05] rounded-2xl overflow-hidden h-full flex flex-col min-h-[320px]">
               {/* Terminal top bar */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.05] bg-white/[0.02] shrink-0">
@@ -197,9 +200,9 @@ export default function FeaturesStack() {
                 <LogStream />
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
-        </div>
+        </StaggerReveal>
       </div>
 
     </section>
