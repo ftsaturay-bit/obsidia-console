@@ -62,7 +62,7 @@ export default function Page() {
           </h1>
           <BlurText
             text="Obsidia streamlines your infrastructure tracking. Monitor system metrics, stream audit logs, and shield your core APIs in a beautifully integrated control plane designed for modern development teams."
-            className="text-zinc-400 text-sm md:text-base max-w-xl mt-6 leading-relaxed"
+            className="text-zinc-400 text-base max-w-xl mt-6 leading-relaxed"
             delay={30}
             animateBy="words"
             direction="bottom"
@@ -110,21 +110,21 @@ export default function Page() {
           <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Minimal Eyebrow Label */}
             <ScrollReveal variant="slide" delay={0.05} yOffset={14}>
-              <span className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-6 block">
+              <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-6 block">
                 Built for Modern Stack
               </span>
             </ScrollReveal>
 
             {/* Striking Headline */}
             <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-              <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium tracking-tight text-white mb-6 leading-[1.15]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-[1.1]">
                 Plugs seamlessly into your architecture.
               </h2>
             </ScrollReveal>
 
             {/* Editorial Body Copy with Glassmorphism Badges */}
             <ScrollReveal variant="fade" delay={0.3}>
-              <p className="text-base md:text-lg font-light text-zinc-400 tracking-tight leading-[1.7] max-w-lg mx-auto lg:mx-0">
+              <p className="text-base text-zinc-400 leading-[1.7] max-w-lg mx-auto lg:mx-0">
                 Engineered to sit directly between your{" "}
                 <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">client-side runtimes</span>
                 {" "}and backend{" "}

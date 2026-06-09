@@ -299,7 +299,7 @@ export default function ReverseRevealCard() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
                 <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
-                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-5 block">
                     01 | SYSTEM VISIBILITY
                   </span>
                 </ScrollReveal>
@@ -310,7 +310,7 @@ export default function ReverseRevealCard() {
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
+                <p className="text-base text-zinc-400 leading-[1.7]">
                   Obsidia synthesizes immediate API shielding, immutable log streams, and ultra-low latency runtime metrics into a singular, high-fidelity control plane.
                 </p>
               </ScrollReveal>
@@ -333,7 +333,7 @@ export default function ReverseRevealCard() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
                 <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
-                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-5 block">
                     02 | DEVELOPER ENGINE
                   </span>
                 </ScrollReveal>
@@ -344,7 +344,7 @@ export default function ReverseRevealCard() {
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
+                <p className="text-base text-zinc-400 leading-[1.7]">
                   Manage environments, provision encryption keys, and deploy automated edge policies directly from your terminal or unified schema manifests without workflow context switching.
                 </p>
               </ScrollReveal>
@@ -367,7 +367,7 @@ export default function ReverseRevealCard() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
                 <ScrollReveal variant="slide" delay={0.05} yOffset={16}>
-                  <span className="text-[11px] font-bold tracking-[0.3em] text-zinc-400 uppercase mb-5 block">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-5 block">
                     03 | GLOBAL EDGE
                   </span>
                 </ScrollReveal>
@@ -378,7 +378,7 @@ export default function ReverseRevealCard() {
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="font-medium text-zinc-300 text-lg md:text-xl leading-[1.7]">
+                <p className="text-base text-zinc-400 leading-[1.7]">
                   Deploy routing logic and security rules across a multi-region substrate. Your system configurations are replicated globally in milliseconds, keeping compute physically close to your users.
                 </p>
               </ScrollReveal>
