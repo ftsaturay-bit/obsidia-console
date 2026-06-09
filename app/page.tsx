@@ -6,6 +6,7 @@ import Orbit from "@/components/Orbit";
 import FadeIn from "@/components/FadeIn";
 import ScrollReveal from "@/components/ScrollReveal";
 import ReverseRevealCard from "@/components/ReverseRevealCard";
+import DeveloperExperience from "@/components/DeveloperExperience";
 
 export default function Page() {
   return (
@@ -158,6 +159,9 @@ export default function Page() {
 
       {/* Expanding Card — Features Reveal */}
       <ReverseRevealCard />
+
+      {/* Developer Experience / Terminal Section */}
+      <DeveloperExperience />
 
       {/* Footer / CTA Section */}
       <footer className="relative z-20 w-full bg-[#0A0908] pb-24 pt-32 flex flex-col items-center justify-center text-center">

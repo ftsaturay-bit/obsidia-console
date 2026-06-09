@@ -339,7 +339,7 @@ export default function ReverseRevealCard() {
                 </ScrollReveal>
                 <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                    Programmable infrastructure. Local to edge.
+                    Programmable infrastructure. From l ocal to edge.
                   </h2>
                 </ScrollReveal>
               </div>
