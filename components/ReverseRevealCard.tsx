@@ -318,7 +318,7 @@ export default function ReverseRevealCard() {
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-10 lg:mt-16" baseDelay={0.35} staggerDelay={0.12}>
               <StaggerItem variant="scale"><ShieldVisual /></StaggerItem>
               <StaggerItem variant="scale"><LogVisual /></StaggerItem>
               <StaggerItem variant="scale"><MetricsVisual /></StaggerItem>
@@ -326,10 +326,10 @@ export default function ReverseRevealCard() {
           </div>
 
           {/* Divider */}
-          <div className="w-full h-[1px] bg-white/[0.05] my-24 lg:my-32" />
+          <div className="w-full h-[1px] bg-white/[0.05] my-16 lg:my-20" />
 
           {/* 02 Feature Block */}
-          <div className="flex flex-col flex-1 justify-between pb-24">
+          <div className="flex flex-col flex-1 justify-between">
             {/* Editorial Typography Layer */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
@@ -353,7 +353,7 @@ export default function ReverseRevealCard() {
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-10 lg:mt-16" baseDelay={0.35} staggerDelay={0.12}>
               <StaggerItem variant="scale"><CodeVisual /></StaggerItem>
               <StaggerItem variant="scale"><NodesVisual /></StaggerItem>
               <StaggerItem variant="scale"><VaultVisual /></StaggerItem>
@@ -361,10 +361,10 @@ export default function ReverseRevealCard() {
           </div>
 
           {/* Divider */}
-          <div className="w-full h-[1px] bg-white/[0.05] my-24 lg:my-32" />
+          <div className="w-full h-[1px] bg-white/[0.05] my-16 lg:my-20" />
 
           {/* 03 Feature Block */}
-          <div className="flex flex-col flex-1 justify-between pb-24">
+          <div className="flex flex-col flex-1 justify-between">
             {/* Editorial Typography Layer */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div className="lg:col-span-7">
@@ -388,7 +388,7 @@ export default function ReverseRevealCard() {
             </div>
 
             {/* Interactive Control Panel Layout */}
-            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-16 lg:mt-24" baseDelay={0.35} staggerDelay={0.12}>
+            <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-10 lg:mt-16" baseDelay={0.35} staggerDelay={0.12}>
               <StaggerItem variant="scale"><MapVisual /></StaggerItem>
               <StaggerItem variant="scale"><SyncVisual /></StaggerItem>
               <StaggerItem variant="scale"><FaultVisual /></StaggerItem>
