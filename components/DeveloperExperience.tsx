@@ -63,9 +63,9 @@ export default function DeveloperExperience() {
             <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-4 block">
               Developer Experience
             </span>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium text-zinc-100 tracking-tight leading-[1.1] mb-6">
-              Up in seconds. <br/>
-              <span className="text-zinc-500">Lives at the edge.</span>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-6">
+              <span className="text-white">Up in seconds.</span><br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">Lives at the edge.</span>
             </h3>
             <p className="font-medium text-base md:text-lg text-zinc-400 leading-[1.7] max-w-lg">
               Obsidia injects directly into your application runtime middleware. No databases to provision, no heavy daemons to install. Drop our lightweight wrapper into your edge routes and gain instant structural authority.

@@ -117,8 +117,9 @@ export default function Page() {
 
             {/* Striking Headline */}
             <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-[1.1]">
-                Plugs seamlessly into your architecture.
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6 leading-[1.1]">
+                <span className="text-white">Plugs seamlessly into</span><br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">your architecture.</span>
               </h2>
             </ScrollReveal>
 

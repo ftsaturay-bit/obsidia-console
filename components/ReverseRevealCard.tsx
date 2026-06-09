@@ -304,13 +304,14 @@ export default function ReverseRevealCard() {
                   </span>
                 </ScrollReveal>
                 <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                    Telemetry at the speed of the edge.
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
+                    <span className="text-white">Telemetry at the speed</span><br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">of the edge.</span>
                   </h2>
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="text-base text-zinc-400 leading-[1.7]">
+                <p className="text-lg text-zinc-300 leading-[1.8]">
                   Obsidia synthesizes immediate API shielding, immutable log streams, and ultra-low latency runtime metrics into a singular, high-fidelity control plane.
                 </p>
               </ScrollReveal>
@@ -338,13 +339,14 @@ export default function ReverseRevealCard() {
                   </span>
                 </ScrollReveal>
                 <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                    Programmable infrastructure. From l ocal to edge.
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
+                    <span className="text-white">Programmable infrastructure.</span><br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">From local to edge.</span>
                   </h2>
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="text-base text-zinc-400 leading-[1.7]">
+                <p className="text-lg text-zinc-300 leading-[1.8]">
                   Manage environments, provision encryption keys, and deploy automated edge policies directly from your terminal or unified schema manifests without workflow context switching.
                 </p>
               </ScrollReveal>
@@ -372,13 +374,14 @@ export default function ReverseRevealCard() {
                   </span>
                 </ScrollReveal>
                 <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                    Distributed execution. Zero cold starts.
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
+                    <span className="text-white">Distributed execution.</span><br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">Zero cold starts.</span>
                   </h2>
                 </ScrollReveal>
               </div>
               <ScrollReveal variant="fade" delay={0.3} className="lg:col-span-5 lg:pt-11">
-                <p className="text-base text-zinc-400 leading-[1.7]">
+                <p className="text-lg text-zinc-300 leading-[1.8]">
                   Deploy routing logic and security rules across a multi-region substrate. Your system configurations are replicated globally in milliseconds, keeping compute physically close to your users.
                 </p>
               </ScrollReveal>
