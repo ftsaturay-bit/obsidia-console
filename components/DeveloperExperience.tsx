@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TABS = [
@@ -51,6 +51,34 @@ export default app;`
 export default function DeveloperExperience() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
   const activeContent = TABS.find((t) => t.id === activeTab)?.code || "";
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const spacer = document.getElementById("reveal-spacer");
+      if (spacer) {
+        const rect = spacer.getBoundingClientRect();
+        // Trigger reveal when the spacer is well into the viewport
+        if (rect.top < window.innerHeight * 0.55) {
+          setIsRevealed(true);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    // Initial check in case it's already in view on load
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const slideVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const fadeVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
 
   return (
     <section className="w-full min-h-screen flex flex-col justify-center border-t border-zinc-900/60 bg-gradient-to-b from-zinc-950/20 to-black py-24 md:py-36 relative z-20">
@@ -59,7 +87,13 @@ export default function DeveloperExperience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* LEFT: THE NARRATIVE */}
-          <div className="text-left flex flex-col justify-center">
+          <motion.div 
+            variants={slideVariants}
+            initial="hidden"
+            animate={isRevealed ? "visible" : "hidden"}
+            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="text-left flex flex-col justify-center"
+          >
             <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-4 block">
               Developer Experience
             </span>
@@ -70,10 +104,16 @@ export default function DeveloperExperience() {
             <p className="font-medium text-base md:text-lg text-zinc-400 leading-[1.7] max-w-lg">
               Obsidia injects directly into your application runtime middleware. No databases to provision, no heavy daemons to install. Drop our lightweight wrapper into your edge routes and gain instant structural authority.
             </p>
-          </div>
+          </motion.div>
 
           {/* RIGHT: THE TERMINAL COMPONENT */}
-          <div className="relative group">
+          <motion.div 
+            variants={fadeVariants}
+            initial="hidden"
+            animate={isRevealed ? "visible" : "hidden"}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative group"
+          >
             {/* Ambient Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#b78a62]/20 via-amber-500/10 to-transparent rounded-[24px] blur-xl opacity-30 group-hover:opacity-60 transition duration-1000" />
             
@@ -90,21 +130,21 @@ export default function DeveloperExperience() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
-                      className={`relative px-3 py-1.5 text-[11px] font-mono transition-all duration-200 rounded-md tracking-wide ${
-                        activeTab === tab.id 
-                          ? 'text-zinc-100 bg-white/10 font-medium' 
-                          : 'text-zinc-500 hover:text-zinc-300 hover:bg-white/5'
-                      }`}
+                      className={`relative px-3 py-1.5 text-[11px] font-mono transition-all duration-200 rounded-md tracking-wide ${activeTab === tab.id
+                        ? 'text-zinc-100 bg-white/10 font-medium'
+                        : 'text-zinc-500 hover:text-zinc-300 hover:bg-white/5'
+                        }`}
                     >
                       {tab.label}
                     </button>
                   ))}
                 </div>
               </div>
-              
+
               {/* Terminal Body */}
               <div className="p-6 relative bg-[#050505] min-h-[320px] overflow-x-auto flex items-start hide-scrollbar">
-                <style dangerouslySetInnerHTML={{__html: `
+                <style dangerouslySetInnerHTML={{
+                  __html: `
                   .hide-scrollbar::-webkit-scrollbar {
                     display: none;
                   }
@@ -127,7 +167,7 @@ export default function DeveloperExperience() {
                 </AnimatePresence>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -137,13 +177,13 @@ export default function DeveloperExperience() {
 
 function CodeHighlight({ code }: { code: string }) {
   const lines = code.split('\n');
-  
+
   return (
     <div className="flex flex-col w-full">
       {lines.map((line, i) => {
         const keywords = ['import', 'export', 'default', 'const', 'from', 'new'];
         let content;
-        
+
         if (line.trim().startsWith('//')) {
           content = <span className="text-zinc-500/80 italic">{line || ' '}</span>;
         } else {
@@ -152,7 +192,7 @@ function CodeHighlight({ code }: { code: string }) {
             if (keywords.includes(part)) {
               return <span key={j} className="text-[#c6a0f6]">{part}</span>;
             } else if (part.startsWith("'") || part.startsWith('"') || part === "'") {
-               return <span key={j} className="text-[#a6da95]">{part}</span>;
+              return <span key={j} className="text-[#a6da95]">{part}</span>;
             } else if (part === 'withObsidia' || part === 'obsidia' || part === 'Hono' || part === 'express') {
               return <span key={j} className="text-[#8aadf4] font-medium">{part}</span>;
             } else {

@@ -99,9 +99,9 @@ export default function Page() {
         </div>
 
         {/* FOREGROUND COVER LAYER */}
-        <div className="[grid-area:1/1] relative w-full z-10 flex flex-col">
+        <div className="[grid-area:1/1] relative w-full z-10 flex flex-col pointer-events-none">
           {/* Opaque content that covers the background layer */}
-          <div className="relative w-full bg-[#0A0908]">
+          <div className="relative w-full bg-[#0A0908] pointer-events-auto">
             {/* Stack Section — Two-Column Grid */}
             <section className="relative bg-[#0A0908] sticky top-0 z-10 min-h-screen flex items-center">
               <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
@@ -177,7 +177,7 @@ export default function Page() {
           </div>
 
           {/* Transparent spacer matches DeveloperExperience's min-h-screen to allow it to be fully revealed */}
-          <div className="w-full h-screen pointer-events-none" />
+          <div id="reveal-spacer" className="w-full h-screen pointer-events-none" />
         </div>
       </div>
     </main>
