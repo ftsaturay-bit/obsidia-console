@@ -53,22 +53,6 @@ export default function DeveloperExperience() {
   const activeContent = TABS.find((t) => t.id === activeTab)?.code || "";
   const [isRevealed, setIsRevealed] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const spacer = document.getElementById("reveal-spacer");
-      if (spacer) {
-        const rect = spacer.getBoundingClientRect();
-        // Trigger reveal when the spacer is well into the viewport
-        if (rect.top < window.innerHeight * 0.55) {
-          setIsRevealed(true);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    // Initial check in case it's already in view on load
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const slideVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -81,7 +65,7 @@ export default function DeveloperExperience() {
   };
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center border-t border-zinc-900/60 bg-[#0d0c0b] py-24 md:py-36 relative z-20">
+    <section className="w-full flex flex-col justify-center border-t border-zinc-900/60 bg-transparent py-24 md:py-36 relative z-20">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         {/* THE SPLIT TERMINAL INTERFACE */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -90,7 +74,8 @@ export default function DeveloperExperience() {
           <motion.div 
             variants={slideVariants}
             initial="hidden"
-            animate={isRevealed ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-left flex flex-col justify-center"
           >
@@ -110,7 +95,8 @@ export default function DeveloperExperience() {
           <motion.div 
             variants={fadeVariants}
             initial="hidden"
-            animate={isRevealed ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative group"
           >

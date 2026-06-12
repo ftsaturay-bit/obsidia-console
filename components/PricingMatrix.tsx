@@ -2,6 +2,7 @@
 
 import React from "react";
 import ScrollReveal, { StaggerReveal, StaggerItem } from "./ScrollReveal";
+import LaserFlow from "./LaserFlow";
 
 const CheckDash = ({ highlight = false }: { highlight?: boolean }) => (
   <svg
@@ -21,10 +22,7 @@ const CheckDash = ({ highlight = false }: { highlight?: boolean }) => (
 
 export default function PricingMatrix() {
   return (
-    <section className="w-full bg-[#0d0c0b] py-24 md:py-36 relative z-20 overflow-hidden">
-      {/* Ambient Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b78a62]/10 rounded-full blur-[120px] pointer-events-none" />
-
+    <section className="w-full bg-transparent py-24 md:py-36 relative z-20">
       <div className="w-full max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <ScrollReveal variant="slide" yOffset={20} className="flex flex-col items-center text-center">
           <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-[#b78a62] uppercase mb-4 block">
