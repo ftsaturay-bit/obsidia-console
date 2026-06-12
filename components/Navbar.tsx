@@ -50,8 +50,8 @@ export default function Navbar() {
 
           {/* Center: Horizontal Navigation Links */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
-            <Link href="#services" className="hover:text-white transition-colors">Services</Link>
-            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="#features" className="hover:text-white transition-colors">Features</Link>
+            <Link href="#pricing" className="hover:text-white transition-colors">Pricing</Link>
             <Link href="#docs" className="hover:text-white transition-colors">Docs</Link>
           </div>
 

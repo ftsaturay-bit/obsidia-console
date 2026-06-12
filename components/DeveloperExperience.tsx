@@ -54,7 +54,7 @@ export default function DeveloperExperience() {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
-    const trigger = document.getElementById('devexp-trigger');
+    const trigger = document.getElementById('developer-experience');
     if (!trigger) return;
 
     const observer = new IntersectionObserver(([entry]) => {

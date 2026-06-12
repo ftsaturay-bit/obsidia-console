@@ -109,7 +109,7 @@ export default function Page() {
           {/* Opaque content that covers the background layer */}
           <div className="relative w-full bg-[#0d0c0b] pointer-events-auto">
             {/* Stack Section — Two-Column Grid */}
-            <section className="relative bg-[#0d0c0b] sticky top-0 z-10 min-h-screen flex items-center">
+            <section id="features" className="relative bg-[#0d0c0b] sticky top-0 z-10 min-h-screen flex items-center">
               <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
                 {/* Left Content Column */}
@@ -183,19 +183,19 @@ export default function Page() {
           </div>
 
           {/* Transparent spacer — allows DevExp+Pricing to be fully revealed as the card scrolls away */}
-          <div id="devexp-trigger" className="w-full h-screen pointer-events-none" />
+          <div id="developer-experience" className="w-full h-screen pointer-events-none" />
         </div>
       </div>
 
       {/* PRICING — follows naturally after DevExp is revealed */}
-      <section className="relative w-full bg-[#0d0c0b]">
+      <section id="pricing" className="relative w-full bg-[#0d0c0b]">
         <div className="absolute -top-[400px] bottom-0 left-0 right-0 z-0 pointer-events-none">
           <LaserFlow
             color="#b78a62"
             horizontalBeamOffset={0.0}
             verticalBeamOffset={-0.5}
             horizontalSizing={2.5}
-            verticalSizing={3.5}
+            verticalSizing={3.0}
             wispDensity={8}
             wispSpeed={2}
             wispIntensity={20.0}
