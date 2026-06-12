@@ -81,7 +81,7 @@ export default function DeveloperExperience() {
   };
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center border-t border-zinc-900/60 bg-gradient-to-b from-zinc-950/20 to-black py-24 md:py-36 relative z-20">
+    <section className="w-full min-h-screen flex flex-col justify-center border-t border-zinc-900/60 bg-[#0d0c0b] py-24 md:py-36 relative z-20">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         {/* THE SPLIT TERMINAL INTERFACE */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
