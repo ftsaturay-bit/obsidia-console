@@ -53,6 +53,24 @@ export default function DeveloperExperience() {
   const activeContent = TABS.find((t) => t.id === activeTab)?.code || "";
   const [isRevealed, setIsRevealed] = useState(false);
 
+  useEffect(() => {
+    const trigger = document.getElementById('devexp-trigger');
+    if (!trigger) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsRevealed(true);
+      }
+    }, { threshold: 0.15 });
+
+    observer.observe(trigger);
+    return () => observer.disconnect();
+  }, []);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 48 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } }
+  };
 
   const slideVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -65,7 +83,12 @@ export default function DeveloperExperience() {
   };
 
   return (
-    <section className="w-full flex flex-col justify-center border-t border-zinc-900/60 bg-transparent py-24 md:py-36 relative z-20">
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      animate={isRevealed ? "visible" : "hidden"}
+      className="w-full flex flex-col justify-center border-t border-zinc-900/60 bg-transparent py-24 md:py-36 relative z-20"
+    >
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         {/* THE SPLIT TERMINAL INTERFACE */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -74,8 +97,7 @@ export default function DeveloperExperience() {
           <motion.div 
             variants={slideVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            animate={isRevealed ? "visible" : "hidden"}
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-left flex flex-col justify-center"
           >
@@ -95,8 +117,7 @@ export default function DeveloperExperience() {
           <motion.div 
             variants={fadeVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            animate={isRevealed ? "visible" : "hidden"}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative group"
           >
@@ -157,7 +178,7 @@ export default function DeveloperExperience() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

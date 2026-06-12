@@ -9,6 +9,7 @@ import ReverseRevealCard from "@/components/ReverseRevealCard";
 import DeveloperExperience from "@/components/DeveloperExperience";
 import PricingMatrix from "@/components/PricingMatrix";
 import LaserFlow from "@/components/LaserFlow";
+import Footer from "@/components/Footer";
 export default function Page() {
   return (
     <main className="min-h-screen bg-[#0d0c0b] text-white relative">
@@ -89,96 +90,112 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FOREGROUND COVER LAYER */}
-      <div className="relative w-full z-10 flex flex-col pointer-events-none">
-        {/* Opaque content that covers the background layer */}
-        <div className="relative w-full bg-[#0d0c0b] pointer-events-auto">
-          {/* Stack Section — Two-Column Grid */}
-          <section className="relative bg-[#0d0c0b] sticky top-0 z-10 min-h-screen flex items-center">
-            <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+      {/* PERFECT REVEAL GRID */}
+      <div className="grid w-full">
 
-              {/* Left Content Column */}
-              <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
-                {/* Minimal Eyebrow Label */}
-                <ScrollReveal variant="slide" delay={0.05} yOffset={14}>
-                  <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-6 block">
-                    Built for Modern Stack
-                  </span>
-                </ScrollReveal>
-
-                {/* Striking Headline */}
-                <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6 leading-[1.1]">
-                    <span className="text-white">Plugs seamlessly into</span><br />
-                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">your architecture.</span>
-                  </h2>
-                </ScrollReveal>
-
-                {/* Editorial Body Copy with Glassmorphism Badges */}
-                <ScrollReveal variant="fade" delay={0.3}>
-                  <p className="text-base text-zinc-400 leading-[1.7] max-w-lg mx-auto lg:mx-0">
-                    Engineered to sit directly between your{" "}
-                    <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">client-side runtimes</span>
-                    {" "}and backend{" "}
-                    <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">data layers</span>
-                    . Obsidia acts as a unified{" "}
-                    <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">control plane</span>
-                    , executing immediate{" "}
-                    <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">API shielding</span>
-                    {" "}and continuous system tracking without touching your core business logic.
-                  </p>
-                </ScrollReveal>
+        {/* BACKGROUND REVEAL LAYER: DevExp sits here, revealed as Capabilities card scrolls up */}
+        <div className="[grid-area:1/1] relative w-full z-0 flex flex-col justify-end">
+          <div className="sticky bottom-0 w-full">
+            <div className="relative w-full bg-[#0d0c0b]">
+              <div className="relative z-10">
+                <DeveloperExperience />
               </div>
-
-              {/* Right Orbit Column */}
-              <ScrollReveal variant="fade" delay={0.5} xOffset={40} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[340px] sm:h-[420px] md:h-[500px]">
-                <div className="scale-[0.65] sm:scale-75 md:scale-100 flex items-center justify-center w-full h-full">
-                  <Orbit
-                    items={[
-                      { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
-                      { src: "https://cdn.simpleicons.org/typescript/ffffff", name: "TypeScript" },
-                      { src: "https://cdn.simpleicons.org/supabase/ffffff", name: "Supabase" },
-                      { src: "https://cdn.simpleicons.org/neon/ffffff", name: "Neon" },
-                      { src: "https://cdn.simpleicons.org/upstash/ffffff", name: "Upstash" },
-                      { src: "https://cdn.simpleicons.org/resend/ffffff", name: "Resend" },
-                      { src: "https://cdn.simpleicons.org/vercel/ffffff", name: "Vercel" },
-                      { src: "https://cdn.simpleicons.org/docker/ffffff", name: "Docker" },
-                    ]}
-                    radius={170}
-                    duration={28}
-                    itemSize={52}
-                    className="w-full h-full"
-                    centerContent={
-                      <img
-                        src="/logo2.png"
-                        alt="Obsidia Logo"
-                        className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
-                        draggable={false}
-                      />
-                    }
-                  />
-                </div>
-              </ScrollReveal>
-
             </div>
-          </section>
-
-          {/* Expanding Card — Features Reveal */}
-          <ReverseRevealCard />
+          </div>
         </div>
 
+        {/* FOREGROUND COVER LAYER: Stack Section + Capabilities Card scroll on top */}
+        <div className="[grid-area:1/1] relative w-full z-10 flex flex-col pointer-events-none">
+          {/* Opaque content that covers the background layer */}
+          <div className="relative w-full bg-[#0d0c0b] pointer-events-auto">
+            {/* Stack Section — Two-Column Grid */}
+            <section className="relative bg-[#0d0c0b] sticky top-0 z-10 min-h-screen flex items-center">
+              <div className="w-full max-w-7xl mx-auto px-8 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+
+                {/* Left Content Column */}
+                <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
+                  {/* Minimal Eyebrow Label */}
+                  <ScrollReveal variant="slide" delay={0.05} yOffset={14}>
+                    <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-zinc-400 uppercase mb-6 block">
+                      Built for Modern Stack
+                    </span>
+                  </ScrollReveal>
+
+                  {/* Striking Headline */}
+                  <ScrollReveal variant="blur" delay={0.15} duration={0.9}>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6 leading-[1.1]">
+                      <span className="text-white">Plugs seamlessly into</span><br />
+                      <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 via-zinc-300 to-zinc-500">your architecture.</span>
+                    </h2>
+                  </ScrollReveal>
+
+                  {/* Editorial Body Copy with Glassmorphism Badges */}
+                  <ScrollReveal variant="fade" delay={0.3}>
+                    <p className="text-base text-zinc-400 leading-[1.7] max-w-lg mx-auto lg:mx-0">
+                      Engineered to sit directly between your{" "}
+                      <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">client-side runtimes</span>
+                      {" "}and backend{" "}
+                      <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">data layers</span>
+                      . Obsidia acts as a unified{" "}
+                      <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">control plane</span>
+                      , executing immediate{" "}
+                      <span className="text-zinc-200 font-medium px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 mx-0.5 whitespace-nowrap">API shielding</span>
+                      {" "}and continuous system tracking without touching your core business logic.
+                    </p>
+                  </ScrollReveal>
+                </div>
+
+                {/* Right Orbit Column */}
+                <ScrollReveal variant="fade" delay={0.5} xOffset={40} yOffset={0} className="lg:col-span-6 flex items-center justify-center h-[340px] sm:h-[420px] md:h-[500px]">
+                  <div className="scale-[0.65] sm:scale-75 md:scale-100 flex items-center justify-center w-full h-full">
+                    <Orbit
+                      items={[
+                        { src: "https://cdn.simpleicons.org/nextdotjs/ffffff", name: "Next.js" },
+                        { src: "https://cdn.simpleicons.org/typescript/ffffff", name: "TypeScript" },
+                        { src: "https://cdn.simpleicons.org/supabase/ffffff", name: "Supabase" },
+                        { src: "https://cdn.simpleicons.org/neon/ffffff", name: "Neon" },
+                        { src: "https://cdn.simpleicons.org/upstash/ffffff", name: "Upstash" },
+                        { src: "https://cdn.simpleicons.org/resend/ffffff", name: "Resend" },
+                        { src: "https://cdn.simpleicons.org/vercel/ffffff", name: "Vercel" },
+                        { src: "https://cdn.simpleicons.org/docker/ffffff", name: "Docker" },
+                      ]}
+                      radius={170}
+                      duration={28}
+                      itemSize={52}
+                      className="w-full h-full"
+                      centerContent={
+                        <img
+                          src="/logo2.png"
+                          alt="Obsidia Logo"
+                          className="w-64 h-64 md:w-80 md:h-80 object-contain select-none"
+                          draggable={false}
+                        />
+                      }
+                    />
+                  </div>
+                </ScrollReveal>
+
+              </div>
+            </section>
+
+            {/* Expanding Card — Features Reveal */}
+            <ReverseRevealCard />
+          </div>
+
+          {/* Transparent spacer — allows DevExp+Pricing to be fully revealed as the card scrolls away */}
+          <div id="devexp-trigger" className="w-full h-screen pointer-events-none" />
+        </div>
       </div>
 
-      {/* COMBINED DEV + PRICING SECTION */}
-      <section className="relative w-full bg-[#0d0c0b] overflow-hidden">
-        {/* LaserFlow Background spanning BOTH sections */}
-        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+      {/* PRICING — follows naturally after DevExp is revealed */}
+      <section className="relative w-full bg-[#0d0c0b]">
+        <div className="absolute -top-[400px] bottom-0 left-0 right-0 z-0 pointer-events-none">
           <LaserFlow
             color="#b78a62"
             horizontalBeamOffset={0.0}
             verticalBeamOffset={-0.5}
             horizontalSizing={2.5}
-            verticalSizing={4.0}
+            verticalSizing={3.5}
             wispDensity={8}
             wispSpeed={2}
             wispIntensity={20.0}
@@ -190,17 +207,13 @@ export default function Page() {
             falloffStart={2.17}
           />
         </div>
-
-        <div className="relative z-10 w-full">
-          <DeveloperExperience />
+        <div className="relative z-10">
           <PricingMatrix />
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full bg-[#b78a62] py-8 text-center text-[#0d0c0b]">
-        <p className="text-sm font-medium">© {new Date().getFullYear()} Obsidia. All rights reserved.</p>
-      </footer>
+      <Footer />
     </main>
   );
 }
